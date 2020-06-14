@@ -3,4 +3,5 @@ UoP GameJam 2020
 
 Hi! Welcome to our University of portsmouth GameJam game 2020!
 
-(Insert all names and roles here)
+<insert names and roles here>
+Stephen Smith - Game and Level Design
