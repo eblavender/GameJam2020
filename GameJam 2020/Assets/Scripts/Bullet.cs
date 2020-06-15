@@ -38,13 +38,6 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.CompareTag("Enemy"))
-        {
-            //Deal damage to enemy
-            //Push back to pool
-            
-        }
-
         combat.PushToPool(gameObject);
     }
 }
