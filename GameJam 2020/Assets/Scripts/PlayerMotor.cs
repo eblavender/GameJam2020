@@ -6,6 +6,7 @@ public class PlayerMotor : MonoBehaviour
 
     [Header("Settings")]
     public bool joystick = true;
+    public bool isFlying = false;
 
     [Space]
 
@@ -14,21 +15,21 @@ public class PlayerMotor : MonoBehaviour
     public float lookSpeed = 1000;
 
     //Cache
-    private Vector3 mouseRotation;
+    private Vector3 mouseRotation, playerMovement;
     private float pitch, yaw;
     private float mouseSensitivity = 0.3f;
 
     void Start()
     {
         playerRigid = GetComponent<Rigidbody>();
-
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = true;
     }
     void FixedUpdate()
     {
-        CalculateRotation();
+        if (!isFlying)
+            return;
+
         CalculateMovement();
+        CalculateRotation();
     }
 
     private void CalculateRotation()
@@ -47,23 +48,21 @@ public class PlayerMotor : MonoBehaviour
             //Move the Rigidbody forwards constantly at speed
             playerRigid.velocity = transform.forward * moveSpeed;
         }
-
-        if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S))
         {
             //Move the Rigidbody backwards constantly at speed
             playerRigid.velocity = -transform.forward * moveSpeed;
         }
-
+        
         if (Input.GetKey(KeyCode.D))
         {
             //Rotate the ship about the Y axis in the positive direction
-            transform.Rotate(Vector3.up * Time.deltaTime * moveSpeed, Space.World);
+            playerRigid.velocity = transform.right * moveSpeed;
         }
-
-        if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A))
         {
             //Rotate the ship about the Y axis in the negative direction
-            transform.Rotate(Vector3.down * Time.deltaTime * moveSpeed, Space.World);
+            playerRigid.velocity = -transform.right * moveSpeed;
         }
     }
 }

@@ -40,7 +40,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.transform.CompareTag("Enemy"))
         {
-            //Kill enemy
+            //Deal damage to enemy
             //Push back to pool
             
         }

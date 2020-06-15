@@ -3,10 +3,12 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
+    public int playerDamage = 10;
+
     [SerializeField] private Transform bulletSpawn;
     [SerializeField] private GameObject bulletPrefab;
 
-    private List<GameObject> availableBullets, usedBullets;
+    private List<GameObject> availableBullets;
     private GameObject nextBullet;
 
     private void Start()
@@ -16,7 +18,6 @@ public class PlayerCombat : MonoBehaviour
         for (int i = 0; i < 10; i++)
             SpawnBullet();
     }
-
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -40,7 +41,6 @@ public class PlayerCombat : MonoBehaviour
         availableBullets.Add(go);
         return go;
     }
-
     private GameObject GetFromPool()
     {
         GameObject toReturn;
