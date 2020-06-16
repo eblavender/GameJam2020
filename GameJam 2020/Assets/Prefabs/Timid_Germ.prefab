@@ -55,7 +55,8 @@ MonoBehaviour:
   rotateX: 0
   rotateY: 0
   rotateZ: 0
-  dist: 10
+  dist: 100
+  movementSpeed: 15
 --- !u!114 &6185619746538059617
 MonoBehaviour:
   m_ObjectHideFlags: 0
