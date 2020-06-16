@@ -6,7 +6,7 @@ public class timidMovement : MonoBehaviour
 {
     public float speedX, speedY, speedZ;
     public float rotateX, rotateY, rotateZ;
-    private Transform Player;
+    public Transform Player;
     public float dist = 10f;
     [SerializeField] float movementSpeed = 6f;
     // Start is called before the first frame update

@@ -135,7 +135,8 @@ MonoBehaviour:
   rotateY: 0
   rotateZ: 0
   Player: {fileID: 0}
-  dist: 6
+  dist: 15
+  movementSpeed: 3
 --- !u!114 &6577729742407183174
 MonoBehaviour:
   m_ObjectHideFlags: 0
