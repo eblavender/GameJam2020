@@ -8,6 +8,7 @@ public class timidMovement : MonoBehaviour
     public float rotateX, rotateY, rotateZ;
     public Transform Player;
     public float dist = 10f;
+    [SerializeField] float movementSpeed = 6f;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class timidMovement : MonoBehaviour
         if (Vector3.Distance(transform.position, Player.position) <= dist)
         {
             transform.LookAt(Player);
-            transform.position -= transform.forward * 6f * Time.deltaTime;
+            transform.position -= transform.forward * movementSpeed * Time.deltaTime;
         }
         else
         {

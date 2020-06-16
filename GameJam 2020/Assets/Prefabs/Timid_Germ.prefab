@@ -73,7 +73,7 @@ MonoBehaviour:
   hostileGerm: {fileID: 0}
   timidGerm: {fileID: 5754295885939649704}
   offset: {x: 0, y: 0, z: 0}
-  spawnTime: 15
+  spawnTime: 90
   maxGerms: 100
   germBehaviour: 0
   status: 
