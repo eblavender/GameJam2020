@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum GermType { Static, Timid, Hostile }
 public class GameManager : MonoBehaviour
@@ -8,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public PlayerMotor motor;
+    public Slider virusSlider;
 
     [Header("Germ Settings")]
     public GameObject staticPrefab;
@@ -34,6 +36,9 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         timer = multiplyFrequency;
+
+        virusSlider.maxValue = maxGerms;
+        virusSlider.value = allGerms.Count;
     }
 
     private void Update()
@@ -56,13 +61,21 @@ public class GameManager : MonoBehaviour
         motor.isFlying = true;
     }
 
+    public void RemoveGerm(GameObject germ)
+    {
+        allGerms.Remove(germ.GetComponent<germMultiply>());
+        UpdateVirusSlider();
+    }
+
     private void MultiplyAllGerms()
     {
         foreach (germMultiply germ in allGerms)
-            tempGerms.Add(germ.MultiplyGerm().GetComponent< germMultiply>());
+            tempGerms.Add(germ.MultiplyGerm().GetComponent<germMultiply>());
 
         foreach (germMultiply germ in tempGerms)
             allGerms.Add(germ);
+
+        tempGerms.Clear();
 
         if (allGerms.Count >= maxGerms)
         {                                                                                            //if max germs > 100 then game over
@@ -70,5 +83,11 @@ public class GameManager : MonoBehaviour
             //Game over
             //manager.
         }
+    }
+
+
+    private void UpdateVirusSlider()
+    {
+        virusSlider.value = allGerms.Count;
     }
 }

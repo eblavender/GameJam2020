@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3566696612947075064}
   - component: {fileID: 3566696612947075067}
   - component: {fileID: 3566696612947075066}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Static_Germ
   m_TagString: Germ
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.75
+  m_Radius: 0.84
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3566696612947075067
 MonoBehaviour:
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 3566696612930508250}
   - component: {fileID: 3566696614042271937}
   - component: {fileID: 3566696614042271942}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Germ_Type_1_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,8 +136,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3566696614042271943}
   m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -0.017081501, y: -0.017081501, z: -0.017081501}
+  m_LocalPosition: {x: -0.00013195, y: 0.000057124, z: -0.00027884}
+  m_LocalScale: {x: -0.033662513, y: -0.033662513, z: -0.033662513}
   m_Children: []
   m_Father: {fileID: 3566696612947075065}
   m_RootOrder: 0
@@ -196,10 +196,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3566696612947075065}
     m_Modifications:
+    - target: {fileID: 6013247566853646496, guid: 567b7377cee387f42935f28f27ed2348,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8745936045456603273, guid: 567b7377cee387f42935f28f27ed2348,
         type: 3}
       propertyPath: m_Name
       value: FX_VirusSmoke_Green
+      objectReference: {fileID: 0}
+    - target: {fileID: 8745936045456603273, guid: 567b7377cee387f42935f28f27ed2348,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8745936045456603274, guid: 567b7377cee387f42935f28f27ed2348,
         type: 3}
@@ -255,6 +265,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8745936045552602011, guid: 567b7377cee387f42935f28f27ed2348,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 567b7377cee387f42935f28f27ed2348, type: 3}

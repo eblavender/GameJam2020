@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4848259041568536804}
   - component: {fileID: 8957322637617504609}
   - component: {fileID: 2433654096564034757}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Germ_Type_1_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 6109986917644130602}
   - component: {fileID: 6733261323996573708}
   - component: {fileID: 8697428312105861581}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hostile_Germ
   m_TagString: Germ
   m_Icon: {fileID: 0}
@@ -136,6 +136,7 @@ MonoBehaviour:
   rotateZ: 0
   Player: {fileID: 0}
   dist: 6
+  movementSpeed: 3
 --- !u!114 &6577729742407183174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +161,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.75
+  m_Radius: 0.48
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6733261323996573708
 MonoBehaviour:
@@ -198,10 +199,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4814075863117348360}
     m_Modifications:
+    - target: {fileID: 6013247566853646496, guid: 35ff3ba452bbf9a4ea8b9586e8551949,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8745936045456603273, guid: 35ff3ba452bbf9a4ea8b9586e8551949,
         type: 3}
       propertyPath: m_Name
       value: FX_VirusSmoke_Red 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8745936045456603273, guid: 35ff3ba452bbf9a4ea8b9586e8551949,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8745936045456603274, guid: 35ff3ba452bbf9a4ea8b9586e8551949,
         type: 3}
@@ -257,6 +268,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8745936045552602011, guid: 35ff3ba452bbf9a4ea8b9586e8551949,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35ff3ba452bbf9a4ea8b9586e8551949, type: 3}

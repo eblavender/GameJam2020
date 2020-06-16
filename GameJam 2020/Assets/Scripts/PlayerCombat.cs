@@ -7,15 +7,18 @@ using DG.Tweening;
 public class PlayerCombat : MonoBehaviour
 {
     private const int MAX_SHIELD = 100;
-    private const int RECHARGE_COOLDOWN = 3;
+    private const int RECHARGE_COOLDOWN = 10;
+
+    private PlayerMotor motor;
 
     [Header("Health and Shields")]
     public int playerDamage = 10;
-    public int health = 100;
-    public int shield = 100;
+    public float health = 100;
+    public float shield = 100;
     public float rechargeSpeed = 1;
 
     public bool hasShield = true;
+
 
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Slider shieldSlider;
@@ -23,13 +26,19 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private GameObject shieldObject;
 
+
     private List<GameObject> availableBullets;
     private GameObject nextBullet;
+
+    private Color originalShieldColor;
 
     private float timer = 3f;
 
     private void Start()
     {
+        originalShieldColor = shieldObject.GetComponent<MeshRenderer>().material.color;
+        motor = GetComponent<PlayerMotor>();
+
         healthSlider.minValue = 0;
         healthSlider.maxValue = health;
         healthSlider.value = health;
@@ -45,6 +54,9 @@ public class PlayerCombat : MonoBehaviour
     }
     private void Update()
     {
+        if (!motor.isFlying)
+            return;
+
         if (Input.GetMouseButtonDown(0))
         {
             FireBullet();
@@ -53,9 +65,12 @@ public class PlayerCombat : MonoBehaviour
         if (timer > 0)
             timer -= Time.deltaTime;
         else if (shield != MAX_SHIELD)
-            shield += Mathf.RoundToInt(Time.deltaTime * rechargeSpeed);
+        {
+            shield += Time.deltaTime * rechargeSpeed;
+            UpdateUI();
+        }
 
-        if (shield >= 0 && !shieldObject.activeInHierarchy)
+        if (shield > 0 && !shieldObject.activeInHierarchy)
             GiveShield();
 
     }
@@ -68,6 +83,16 @@ public class PlayerCombat : MonoBehaviour
             TakeDamage(10);
         }
 
+        if (!shieldObject.activeInHierarchy)
+            return;
+
+        Sequence shieldExpand = DOTween.Sequence();
+        shieldExpand.Append(shieldObject.transform.DOScale(new Vector3(0.013f, 0.013f, 0.013f), 0.1f).SetEase(Ease.Linear))
+            .Append(shieldObject.transform.DOScale(new Vector3(0.011f, 0.011f, 0.011f), 0.1f).SetEase(Ease.Linear));
+
+        Sequence shieldColor = DOTween.Sequence();
+        shieldColor.Append(shieldObject.GetComponent<MeshRenderer>().material.DOColor(Color.white, 0.1f))
+            .Append(shieldObject.GetComponent<MeshRenderer>().material.DOColor(originalShieldColor, 0.1f));
     }
 
     public void FireBullet()
@@ -79,7 +104,7 @@ public class PlayerCombat : MonoBehaviour
     }
     private void TakeDamage(int amount)
     {
-        int difference;
+        float difference;
 
         if (hasShield)
         {
@@ -92,14 +117,6 @@ public class PlayerCombat : MonoBehaviour
                 difference = Math.Abs(shield);
                 health -= difference;
                 shield = 0;
-
-                CheckDeath();
-            }
-            else
-            {
-                //Still has shield left
-                timer = RECHARGE_COOLDOWN;
-                return;
             }
         }
         else
@@ -107,13 +124,15 @@ public class PlayerCombat : MonoBehaviour
             health -= amount;
         }
 
+        timer = RECHARGE_COOLDOWN;
         UpdateUI();
+        CheckDeath();
     }
 
     private void UpdateUI()
     {
-        healthSlider.value = health;
-        shieldSlider.value = shield;
+        healthSlider.value = Mathf.RoundToInt(health);
+        shieldSlider.value = Mathf.RoundToInt(shield);
     }
     private void CheckDeath()
     {
@@ -121,6 +140,7 @@ public class PlayerCombat : MonoBehaviour
         {
             //Dead
             //Trigger big o'l explosion
+            Destroy(gameObject);
         }
     }
 

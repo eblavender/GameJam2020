@@ -24,56 +24,31 @@ public class germMultiply : MonoBehaviour
         float randomZ = Random.Range(-7f, 7f);
 
         if (randomX >= -1.5f && randomX <= 0f)
-        {
             randomX = -1.5f;
-        }
         else if (randomX <= 1.5f && randomX >= 0f)
-        {
             randomX = 1.5f;
-        }
 
         if (randomY >= -1.5f && randomY <= 0f)
-        {
             randomY = -1.5f;
-        }
         else if (randomY <= 1.5f && randomY >= 0f)                                       //making sure the germs dont merge with one another
-        {
             randomY = 1.5f;
-        }
 
         if (randomZ >= -1.5f && randomZ <= 0f)
-        {
             randomZ = -1.5f;
-        }
         else if (randomZ <= 1.5f && randomZ >= 0f)
-        {
             randomZ = 1.5f;
-        }
 
         offset = new Vector3(randomX, randomY, randomZ);
 
         germChance = Random.Range(0, 100);
 
         if (manager.hostileChance >= germChance)
-        {
-            Debug.Log("Hostile");
             germ = Instantiate(manager.hostilePrefab, transform.position + offset, Random.rotation);
-            //status = "Hostile";
-        }
         else if (manager.timidChance >= germChance)
-        {
-            Debug.Log("Timid");
             germ = Instantiate(manager.timidPrefab, transform.position + offset, Random.rotation);
-            //status = "Timid";
-        }
         else
-        {
-            Debug.Log("Static");
             germ = Instantiate(manager.staticPrefab, transform.position + offset, Random.rotation);
-            //status = "Static";
-        }
 
         return germ;
-        //spawn the second germ
     }
 }

@@ -35,15 +35,21 @@ public class PlayerMotor : MonoBehaviour
         CalculateMovement();
         CalculateRotation();
     }
+    private void Update()
+    {
+        //CalculateRotation();
+    }
 
     private void CalculateRotation()
     {
-        pitch = -Input.GetAxis("Mouse Y");
-        yaw = Input.GetAxis("Mouse X");
+        pitch -= Input.GetAxis("Mouse Y");
+        yaw += Input.GetAxis("Mouse X");
 
         mouseRotation = new Vector3(pitch, yaw, 0) * Time.deltaTime * lookSpeed;
 
-        playerRigid.MoveRotation(playerRigid.rotation * Quaternion.Euler(mouseRotation));
+        transform.eulerAngles = mouseRotation;
+
+        //playerRigid.MoveRotation(playerRigid.rotation * Quaternion.Euler(mouseRotation));
     }
     private void CalculateMovement()
     {

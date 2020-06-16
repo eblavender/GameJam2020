@@ -6,15 +6,15 @@ public class germDeath : MonoBehaviour
 {
     public float germHealth = 30f;
 
-    void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        if (other.tag == "Bullet")
+        if (other.transform.CompareTag("Bullet"))
         {
-            Debug.Log("hit");
             germHealth -= 10f;
-            if(germHealth <= 0f)
+
+            if (germHealth <= 0f)
             {
-                GameManager.Instance.allGerms.Remove(GetComponent<germMultiply>());
+                GameManager.Instance.RemoveGerm(gameObject);
                 Destroy(gameObject);
             }
 
