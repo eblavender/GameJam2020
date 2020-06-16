@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class PlayerCombat : MonoBehaviour
 {
@@ -54,15 +55,19 @@ public class PlayerCombat : MonoBehaviour
         else if (shield != MAX_SHIELD)
             shield += Mathf.RoundToInt(Time.deltaTime * rechargeSpeed);
 
+        if (shield >= 0 && !shieldObject.activeInHierarchy)
+            GiveShield();
+
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.CompareTag("Enemy"))
+        if (collision.transform.CompareTag("Germ"))
         {
             //Take damage from virus
             TakeDamage(10);
         }
+
     }
 
     public void FireBullet()

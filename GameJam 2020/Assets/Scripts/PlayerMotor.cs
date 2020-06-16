@@ -1,7 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
+public enum MoveState { Idle, Forward, Backward, Left, Right}
 public class PlayerMotor : MonoBehaviour
 {
+    public Animator boostEffectAnim;
     private Rigidbody playerRigid;
 
     [Header("Settings")]
@@ -11,13 +14,14 @@ public class PlayerMotor : MonoBehaviour
     [Space]
 
     [Header("Parameters")]
-    public float moveSpeed = 18;
+    public float maxSpeed = 15;
     public float lookSpeed = 1000;
+    public float thrust = 10f;
 
     //Cache
-    private Vector3 mouseRotation, playerMovement;
+    private Vector3 mouseRotation;
     private float pitch, yaw;
-    private float mouseSensitivity = 0.3f;
+    private float boostAmount;
 
     void Start()
     {
@@ -37,32 +41,25 @@ public class PlayerMotor : MonoBehaviour
         pitch = -Input.GetAxis("Mouse Y");
         yaw = Input.GetAxis("Mouse X");
 
-        mouseRotation = new Vector3(pitch, yaw, 0) * mouseSensitivity * Time.deltaTime * lookSpeed;
+        mouseRotation = new Vector3(pitch, yaw, 0) * Time.deltaTime * lookSpeed;
 
         playerRigid.MoveRotation(playerRigid.rotation * Quaternion.Euler(mouseRotation));
     }
     private void CalculateMovement()
     {
+        //Verticle
         if (Input.GetKey(KeyCode.W))
-        {
-            //Move the Rigidbody forwards constantly at speed
-            playerRigid.velocity = transform.forward * moveSpeed;
-        }
+            playerRigid.AddForce(transform.forward * thrust);
         else if (Input.GetKey(KeyCode.S))
-        {
-            //Move the Rigidbody backwards constantly at speed
-            playerRigid.velocity = -transform.forward * moveSpeed;
-        }
-        
+            playerRigid.AddForce(-transform.forward * thrust);
+
+        //Horizontal
         if (Input.GetKey(KeyCode.D))
-        {
-            //Rotate the ship about the Y axis in the positive direction
-            playerRigid.velocity = transform.right * moveSpeed;
-        }
+            playerRigid.AddForce(transform.right * thrust);
         else if (Input.GetKey(KeyCode.A))
-        {
-            //Rotate the ship about the Y axis in the negative direction
-            playerRigid.velocity = -transform.right * moveSpeed;
-        }
+            playerRigid.AddForce(-transform.right * thrust);
+
+        boostAmount = -1f + ((playerRigid.velocity.magnitude / 30f) * 2);
+        boostEffectAnim.SetFloat("Boost", boostAmount);
     }
 }

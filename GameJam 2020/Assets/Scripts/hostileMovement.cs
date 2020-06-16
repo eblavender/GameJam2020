@@ -11,6 +11,8 @@ public class hostileMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Player = GameManager.Instance.motor.transform;
+
         rotateX = Random.Range(-10f, 10f) * Time.deltaTime;
         rotateY = Random.Range(-10f, 10f) * Time.deltaTime;
         rotateZ = Random.Range(-10f, 10f) * Time.deltaTime;

@@ -6,18 +6,6 @@ public class germDeath : MonoBehaviour
 {
     public float germHealth = 30f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Bullet")
@@ -26,6 +14,7 @@ public class germDeath : MonoBehaviour
             germHealth -= 10f;
             if(germHealth <= 0f)
             {
+                GameManager.Instance.allGerms.Remove(GetComponent<germMultiply>());
                 Destroy(gameObject);
             }
 
