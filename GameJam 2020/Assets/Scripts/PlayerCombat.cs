@@ -149,10 +149,10 @@ public class PlayerCombat : MonoBehaviour
             isDead = true;
             explosion.Play();
             playerDefeatScreen.SetActive(true);
-            Destroy(gameObject);
+            Destroy(GetComponentInChildren<MeshRenderer>());
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            Time.timeScale = 0f;
+            Time.timeScale = 0.2f;
         }
     }
 
