@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5371160649293589168}
   - component: {fileID: 8327381885706398364}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4163420929024706344}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 1330244113915153391}
   - component: {fileID: 1482146980461743436}
   - component: {fileID: 5679189688850995752}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 6945781236690046178}
   - component: {fileID: 3968472961948401104}
   - component: {fileID: 5760700846907377446}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 6866394574650609978}
   - component: {fileID: 6410533455831124217}
   - component: {fileID: 2485434773316234614}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +375,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2801446982197522734}
   - component: {fileID: 8297724000329845901}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -464,7 +464,8 @@ GameObject:
   - component: {fileID: 2794015994801703345}
   - component: {fileID: 1384267684824854352}
   - component: {fileID: 1760480608521887412}
-  m_Layer: 0
+  - component: {fileID: 1927552707}
+  m_Layer: 8
   m_Name: Spotlight and Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,7 +497,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9627227, g: 1, b: 0.7830189, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -560,7 +561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorFromLight: 1
   colorMode: 0
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0.9627227, g: 1, b: 0.7830189, a: 1}
   colorGradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -625,6 +626,27 @@ MonoBehaviour:
   _SortingOrder: 0
   _FadeOutBegin: -150
   _FadeOutEnd: -200
+--- !u!114 &1927552707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4824614542100461280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e39f0f7e17f11f2448932da58e9b63d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alpha: 0.5
+  size: 0.01
+  direction: 1
+  speed: 0.03
+  density: 5
+  spawnMinDistance: 0
+  spawnMaxDistance: 0.7
+  cullingEnabled: 1
+  cullingMaxDistance: 10
 --- !u!1 &5052540424927483254
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,7 +656,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4867818811574600870}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -673,7 +695,7 @@ GameObject:
   - component: {fileID: 1580042645782747149}
   - component: {fileID: 2507258786601103481}
   - component: {fileID: 7621705584926099676}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -772,7 +794,7 @@ GameObject:
   - component: {fileID: 9159763154629246917}
   - component: {fileID: 954039050520067142}
   - component: {fileID: 4262719402189698305}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -844,7 +866,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2570579068780636295}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -879,7 +901,7 @@ GameObject:
   - component: {fileID: 7656700660191041438}
   - component: {fileID: 6185757233828443380}
   - component: {fileID: 6461556752967311516}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -955,7 +977,7 @@ MonoBehaviour:
   playerDamage: 10
   health: 100
   shield: 100
-  rechargeSpeed: 1
+  rechargeSpeed: 10
   hasShield: 1
   healthSlider: {fileID: 8327381885706398364}
   shieldSlider: {fileID: 8297724000329845901}
@@ -1000,7 +1022,7 @@ GameObject:
   - component: {fileID: 3989340484362877429}
   - component: {fileID: 3218085489285899905}
   - component: {fileID: 2113806166846733004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1135,6 +1157,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShipAssetV3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 66af0554b5859904192f8867d43d14c7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66af0554b5859904192f8867d43d14c7, type: 3}
 --- !u!4 &3054708991583896483 stripped
@@ -1150,6 +1177,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8870944682823243925}
     m_Modifications:
+    - target: {fileID: 4945529110529648076, guid: a33a8b2d230002b46b58096a3d92b9bc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945529110584214697, guid: a33a8b2d230002b46b58096a3d92b9bc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4945529110863117394, guid: a33a8b2d230002b46b58096a3d92b9bc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1209,6 +1246,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FX_Ship_Jet
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945529110863117397, guid: a33a8b2d230002b46b58096a3d92b9bc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945529111461033539, guid: a33a8b2d230002b46b58096a3d92b9bc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945529112014515424, guid: a33a8b2d230002b46b58096a3d92b9bc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945529112088177253, guid: a33a8b2d230002b46b58096a3d92b9bc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945529112229847159, guid: a33a8b2d230002b46b58096a3d92b9bc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945529112437373205, guid: a33a8b2d230002b46b58096a3d92b9bc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a33a8b2d230002b46b58096a3d92b9bc, type: 3}
