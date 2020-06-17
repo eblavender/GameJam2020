@@ -44,15 +44,23 @@ public class PlayerMotor : MonoBehaviour
 
     private void CalculateRotation()
     {
-        if(gameSettings.yAxisInvert == false)
-        pitch -= Input.GetAxis("Mouse Y");
-        else
-            pitch += Input.GetAxis("Mouse Y");
+        if (gameSettings)
+        {
+            if (gameSettings.yAxisInvert == false)
+                pitch -= Input.GetAxis("Mouse Y");
+            else
+                pitch += Input.GetAxis("Mouse Y");
 
-        if(gameSettings.xAxisInvert == false)
-        yaw += Input.GetAxis("Mouse X");
+            if (gameSettings.xAxisInvert == false)
+                yaw += Input.GetAxis("Mouse X");
+            else
+                yaw -= Input.GetAxis("Mouse X");
+        }
         else
-            yaw -= Input.GetAxis("Mouse X");
+        {
+            pitch -= Input.GetAxis("Mouse Y");
+            yaw += Input.GetAxis("Mouse X");
+        }
 
         mouseRotation = new Vector3(pitch, yaw, 0) * Time.deltaTime * lookSpeed;
 
