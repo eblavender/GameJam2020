@@ -22,10 +22,12 @@ public class PlayerMotor : MonoBehaviour
     private Vector3 mouseRotation;
     private float pitch, yaw;
     private float boostAmount;
+    private GameSettings gameSettings;
 
     void Start()
     {
         playerRigid = GetComponent<Rigidbody>();
+        gameSettings = GameSettings.Instance;
     }
     void FixedUpdate()
     {
@@ -42,8 +44,15 @@ public class PlayerMotor : MonoBehaviour
 
     private void CalculateRotation()
     {
+        if(gameSettings.yAxisInvert == false)
         pitch -= Input.GetAxis("Mouse Y");
+        else
+            pitch += Input.GetAxis("Mouse Y");
+
+        if(gameSettings.xAxisInvert == false)
         yaw += Input.GetAxis("Mouse X");
+        else
+            yaw -= Input.GetAxis("Mouse X");
 
         mouseRotation = new Vector3(pitch, yaw, 0) * Time.deltaTime * lookSpeed;
 

@@ -4,20 +4,26 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
+
 public class menuScript : MonoBehaviour
 {
     public Button playButton, optionsButton, quitButton;
+    public GameObject optionsMenu, playMenu;
+    private GameSettings gameSettings;
+    public Slider mouseSens;
 
-    // Start is called before the first frame update
+
     void Start()
     {
-        
+        gameSettings = GameSettings.Instance;
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        
+        mouseSens.value = gameSettings.sensValue;
     }
 
     public void LoadLevel()
@@ -47,5 +53,36 @@ public class menuScript : MonoBehaviour
         quitButton.interactable = false;
     }
 
-    
+    public void OptionsPressed()
+    {
+        // optionsMenu.SetActive(true);
+        // playMenu.SetActive(false);
+        StartCoroutine("OptionsButtonDelay");
+    }
+
+    public void BackPressed()
+    {
+        // optionsMenu.SetActive(false);
+        // playMenu.SetActive(true);
+        StartCoroutine("BackButtonDelay");
+    }
+
+    IEnumerator OptionsButtonDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
+        optionsMenu.SetActive(true);
+        playMenu.SetActive(false);
+
+    }
+
+    IEnumerator BackButtonDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
+        optionsMenu.SetActive(false);
+        playMenu.SetActive(true);
+
+    }
+
+
+
 }
