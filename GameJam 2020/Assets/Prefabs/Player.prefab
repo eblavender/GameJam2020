@@ -216,6 +216,7 @@ MonoBehaviour:
   rechargeSpeed: 10
   playerDefeatScreen: {fileID: 0}
   hasShield: 1
+  isDead: 0
   healthSlider: {fileID: 0}
   shieldSlider: {fileID: 0}
   bulletSpawn: {fileID: 2570579068780636295}

@@ -20,6 +20,7 @@ public class PlayerCombat : MonoBehaviour
     public GameObject playerDefeatScreen;
 
     public bool hasShield = true;
+    [SerializeField] private bool isDead = false;
 
 
     [SerializeField] private Slider healthSlider;
@@ -59,7 +60,7 @@ public class PlayerCombat : MonoBehaviour
     }
     private void Update()
     {
-        if (!motor.isFlying)
+        if (!motor.isFlying || isDead)
             return;
 
         if (Input.GetMouseButtonDown(0))
@@ -144,7 +145,8 @@ public class PlayerCombat : MonoBehaviour
         if(health <= 0)
         {
             //Dead
-            //Trigger big o'l explosion     
+            //Trigger big o'l explosion
+            isDead = true;
             explosion.Play();
             playerDefeatScreen.SetActive(true);
             Destroy(gameObject);

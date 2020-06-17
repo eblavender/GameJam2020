@@ -27,6 +27,9 @@ public class timidMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!Player)
+            return;
+
         if (Vector3.Distance(transform.position, Player.position) <= dist)
         {
             if (!flashing)

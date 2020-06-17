@@ -57,7 +57,7 @@ MonoBehaviour:
   rotateZ: 0
   Player: {fileID: 0}
   dist: 10
-  movementSpeed: 6
+  movementSpeed: 5
   timidMat: {fileID: 650497656434649256}
 --- !u!114 &6185619746538059617
 MonoBehaviour:

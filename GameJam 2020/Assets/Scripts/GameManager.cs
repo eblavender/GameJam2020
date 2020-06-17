@@ -43,49 +43,37 @@ public class GameManager : MonoBehaviour
         virusSlider.maxValue = maxGerms;
         virusSlider.value = allGerms.Count;
 
-        victoryScreen.SetActive(false);
-        germDefeatScreen.SetActive(false);
-        pauseScreen.SetActive(false);
+        if(victoryScreen)
+            victoryScreen.SetActive(false);
+        if (germDefeatScreen)
+            germDefeatScreen.SetActive(false);
+        if (pauseScreen)
+            pauseScreen.SetActive(false);
 
         pause = false;
         gameOver = false;
-
-        Time.timeScale = 1f;
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseGame();
+        }
+
         if (timer > 0)
         {
             timer -= Time.deltaTime;
             virusSlider.value = allGerms.Count;
             if (allGerms.Count <= 0f)
             {
-                Debug.Log("Fin");
-                victoryScreen.SetActive(true);
+                if(!victoryScreen.activeInHierarchy)
+                    victoryScreen.SetActive(true);
 
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
             }
 
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                pause = !pause;
-            }
-
-            if(pause == true)
-            {
-                pauseScreen.SetActive(true);
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-                Time.timeScale = 0f;
-            }
-            /*else
-            {
-
-                pauseScreen.SetActive(false);
-                Time.timeScale = 1f;
-            }*/
             return;
         }
 
@@ -104,6 +92,25 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
 
         motor.isFlying = true;
+    }
+    private void PauseGame()
+    {
+        pause = !pause;
+
+        pauseScreen.SetActive(pause);
+
+        if (pause)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = false;
+            Time.timeScale = 1f;
+        }
     }
 
     public void RemoveGerm(GameObject germ)
@@ -142,24 +149,11 @@ public class GameManager : MonoBehaviour
 
     public void RetryLevel()
     {
-        StartCoroutine("RetryButtonDelay");
-        //Application.LoadLevel(Application.loadedLevel);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ReturnToMaiunMenu()
     {
-        StartCoroutine("ReturnButtonDelay");
-    }
-
-    IEnumerator RetryButtonDelay()
-    {
-        yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    IEnumerator ReturnButtonDelay()
-    {
-        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }

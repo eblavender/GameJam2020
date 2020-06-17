@@ -40,10 +40,6 @@ public class PlayerMotor : MonoBehaviour
         CalculateMovement();
         CalculateRotation();
     }
-    private void Update()
-    {
-        //CalculateRotation();
-    }
 
     private void CalculateRotation()
     {
