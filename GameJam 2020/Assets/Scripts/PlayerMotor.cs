@@ -28,6 +28,9 @@ public class PlayerMotor : MonoBehaviour
     {
         playerRigid = GetComponent<Rigidbody>();
         gameSettings = GameSettings.Instance;
+
+        if(gameSettings)
+            lookSpeed *= gameSettings.sensValue;
     }
     void FixedUpdate()
     {

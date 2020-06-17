@@ -1722,6 +1722,7 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+<<<<<<< HEAD
 --- !u!1 &182941211599698006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1796,6 +1797,8 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+=======
+>>>>>>> Virus-Features
 --- !u!1 &182941211704189010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1829,7 +1832,11 @@ RectTransform:
   - {fileID: 1296637485}
   - {fileID: 1786975225}
   m_Father: {fileID: 182941213144817459}
+<<<<<<< HEAD
   m_RootOrder: 1
+=======
+  m_RootOrder: 0
+>>>>>>> Virus-Features
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2065,7 +2072,11 @@ RectTransform:
   - {fileID: 1257971112}
   - {fileID: 906206437}
   m_Father: {fileID: 182941213144817459}
+<<<<<<< HEAD
   m_RootOrder: 2
+=======
+  m_RootOrder: 1
+>>>>>>> Virus-Features
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2109,6 +2120,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+<<<<<<< HEAD
 --- !u!1 &182941212040831480
 GameObject:
   m_ObjectHideFlags: 0
@@ -2650,6 +2662,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 182941212040831480}
   m_CullTransparentMesh: 0
+=======
+>>>>>>> Virus-Features
 --- !u!1 &182941212067990550
 GameObject:
   m_ObjectHideFlags: 0
@@ -2683,7 +2697,11 @@ RectTransform:
   - {fileID: 306638819}
   - {fileID: 205126200}
   m_Father: {fileID: 182941213144817459}
+<<<<<<< HEAD
   m_RootOrder: 3
+=======
+  m_RootOrder: 2
+>>>>>>> Virus-Features
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2727,7 +2745,11 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+<<<<<<< HEAD
 --- !u!1 &182941212241153494
+=======
+--- !u!1 &182941212469885000
+>>>>>>> Virus-Features
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2735,9 +2757,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 182941212241153497}
   - component: {fileID: 182941212241153499}
   - component: {fileID: 182941212241153496}
+=======
+  - component: {fileID: 182941212469885003}
+  - component: {fileID: 182941212469885005}
+  - component: {fileID: 182941212469885002}
+>>>>>>> Virus-Features
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2745,12 +2773,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!224 &182941212241153497
+=======
+--- !u!224 &182941212469885003
+>>>>>>> Virus-Features
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 182941212241153494}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -2765,20 +2798,46 @@ RectTransform:
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &182941212241153499
+=======
+  m_GameObject: {fileID: 182941212469885000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 182941211704189013}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 196}
+  m_SizeDelta: {x: 836.8877, y: 389.58966}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &182941212469885005
+>>>>>>> Virus-Features
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 182941212241153494}
   m_CullTransparentMesh: 0
 --- !u!114 &182941212241153496
+=======
+  m_GameObject: {fileID: 182941212469885000}
+  m_CullTransparentMesh: 0
+--- !u!114 &182941212469885002
+>>>>>>> Virus-Features
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 182941212241153494}
+=======
+  m_GameObject: {fileID: 182941212469885000}
+>>>>>>> Virus-Features
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -2791,7 +2850,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< HEAD
   m_text: Play
+=======
+  m_text: 'VICTORY
+
+
+    YOU ERADICATED ALL THE GERMS'
+>>>>>>> Virus-Features
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2800,8 +2866,13 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
+<<<<<<< HEAD
     rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+=======
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+>>>>>>> Virus-Features
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2819,10 +2890,17 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
+<<<<<<< HEAD
   m_fontSize: 25.1
   m_fontSizeBase: 25.1
   m_fontWeight: 400
   m_enableAutoSizing: 0
+=======
+  m_fontSize: 72
+  m_fontSizeBase: 70
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+>>>>>>> Virus-Features
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -2859,6 +2937,7 @@ MonoBehaviour:
   m_pageToDisplay: 1
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
+<<<<<<< HEAD
     textComponent: {fileID: 182941212241153496}
     characterCount: 4
     spriteCount: 0
@@ -2866,6 +2945,15 @@ MonoBehaviour:
     wordCount: 1
     linkCount: 0
     lineCount: 1
+=======
+    textComponent: {fileID: 182941212469885002}
+    characterCount: 37
+    spriteCount: 0
+    spaceCount: 6
+    wordCount: 6
+    linkCount: 0
+    lineCount: 4
+>>>>>>> Virus-Features
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -2883,7 +2971,11 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+<<<<<<< HEAD
 --- !u!1 &182941212464744918
+=======
+--- !u!1 &182941212648809517
+>>>>>>> Virus-Features
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2891,21 +2983,34 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 182941212464744921}
   - component: {fileID: 182941212464744920}
   m_Layer: 0
   m_Name: Slider
+=======
+  - component: {fileID: 182941212648809516}
+  - component: {fileID: 182941212648809518}
+  - component: {fileID: 182941212648809519}
+  m_Layer: 0
+  m_Name: Text (TMP)
+>>>>>>> Virus-Features
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!224 &182941212464744921
+=======
+--- !u!224 &182941212648809516
+>>>>>>> Virus-Features
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 182941212464744918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -2923,11 +3028,36 @@ RectTransform:
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &182941212464744920
+=======
+  m_GameObject: {fileID: 182941212648809517}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 182941211978335704}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 196}
+  m_SizeDelta: {x: 1259.3438, y: 389.58966}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &182941212648809518
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182941212648809517}
+  m_CullTransparentMesh: 0
+--- !u!114 &182941212648809519
+>>>>>>> Virus-Features
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 182941212464744918}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -3229,6 +3359,19 @@ MonoBehaviour:
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
+=======
+  m_GameObject: {fileID: 182941212648809517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+>>>>>>> Virus-Features
     m_PersistentCalls:
       m_Calls: []
   m_text: 'DEFEAT
@@ -3326,6 +3469,7 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+<<<<<<< HEAD
 --- !u!1 &182941212902362015
 GameObject:
   m_ObjectHideFlags: 0
@@ -3474,6 +3618,8 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+=======
+>>>>>>> Virus-Features
 --- !u!1 &182941213144817420
 GameObject:
   m_ObjectHideFlags: 0
@@ -3505,7 +3651,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+<<<<<<< HEAD
   - {fileID: 182941212040831483}
+=======
+>>>>>>> Virus-Features
   - {fileID: 182941211704189013}
   - {fileID: 182941211978335704}
   - {fileID: 182941212067990553}
@@ -3597,6 +3746,7 @@ MonoBehaviour:
   CanvasName: PlayerUICanvas
   CustomCanvasName: 0
   DontDestroyCanvasOnLoad: 0
+<<<<<<< HEAD
 --- !u!1 &182941213236783350
 GameObject:
   m_ObjectHideFlags: 0
@@ -6067,3 +6217,5 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 2
   TextLabel: {fileID: 0}
+=======
+>>>>>>> Virus-Features

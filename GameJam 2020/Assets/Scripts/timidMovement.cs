@@ -9,11 +9,15 @@ public class timidMovement : MonoBehaviour
     public Transform Player;
     public float dist = 10f;
     [SerializeField] float movementSpeed = 6f;
-    [SerializeField] private Material timidMat;
+    [SerializeField] private MeshRenderer timidMat;
+    private MaterialPropertyBlock materialBlock;
+    private bool flashing;
+
     // Start is called before the first frame update
     void Start()
     {
         Player = GameManager.Instance.motor.transform;
+        materialBlock = new MaterialPropertyBlock();
 
         rotateX = Random.Range(-10f, 10f) * Time.deltaTime;
         rotateY = Random.Range(-10f, 10f) * Time.deltaTime;
@@ -25,22 +29,35 @@ public class timidMovement : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, Player.position) <= dist)
         {
-            transform.LookAt(Player);
-            transform.position -= transform.forward * movementSpeed * Time.deltaTime;
-
-            if (!timidMat.IsKeywordEnabled("_EMISSION"))
-                timidMat.EnableKeyword("_EMISSION");
+            if (!flashing)
+                Flash(true);
         }
         else
         {
+            transform.position -= transform.forward * movementSpeed * Time.deltaTime;
+
             speedX = Random.Range(-1f, 1f) * Time.deltaTime;
             speedY = Random.Range(-1f, 1f) * Time.deltaTime;
             speedZ = Random.Range(-1f, 1f) * Time.deltaTime;
             transform.position += new Vector3(speedX, speedY, speedZ);
             transform.eulerAngles += new Vector3(rotateX, rotateY, rotateZ);
 
-            if (timidMat.IsKeywordEnabled("_EMISSION"))
-                timidMat.DisableKeyword("_EMISSION");
+            if (flashing)
+                Flash(false);
         }
+    }
+
+    private void Flash(bool on)
+    {
+        flashing = on;
+
+        timidMat.GetPropertyBlock(materialBlock);
+
+        if(on)
+            materialBlock.SetColor("_EmissionColor", Color.white * 2);
+        else
+            materialBlock.SetColor("_EmissionColor", Color.white / 2);
+
+        timidMat.SetPropertyBlock(materialBlock);
     }
 }
