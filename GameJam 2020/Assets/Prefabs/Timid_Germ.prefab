@@ -58,7 +58,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   dist: 10
   movementSpeed: 6
-  timidMat: {fileID: 2100000, guid: 0cd83f123556cd1409c9d52b3705f5b9, type: 2}
+  timidMat: {fileID: 650497656434649256}
 --- !u!114 &6185619746538059617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2d4ff2705bf6c46a6ab9f77d57c44c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  germType: 0
+  germType: 1
 --- !u!135 &6120043151777114560
 SphereCollider:
   m_ObjectHideFlags: 0

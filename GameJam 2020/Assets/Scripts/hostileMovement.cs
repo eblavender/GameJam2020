@@ -11,55 +11,48 @@ public class hostileMovement : MonoBehaviour
     public float dist = 6f;
     [SerializeField] private float movementSpeed = 3f;
 
-    [SerializeField] private Material hostileMat;
-    private bool flashing = false;
+    [SerializeField] private MeshRenderer hostileMesh;
+    private MaterialPropertyBlock materialBlock;
 
     // Start is called before the first frame update
     void Start()
     {
         Player = GameManager.Instance.motor.transform;
+        materialBlock = new MaterialPropertyBlock();
 
         rotateX = Random.Range(-1f, 1f);
         rotateY = Random.Range(-1f, 1f);
         rotateZ = Random.Range(-1f, 1f);
+
+        StartCoroutine(Flash());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, Player.position) <= dist)
-        {
-            transform.LookAt(Player);
-            transform.position += transform.forward * movementSpeed * Time.deltaTime;
+        transform.LookAt(Player);
+        transform.position += transform.forward * movementSpeed * Time.deltaTime;
 
-            if (!flashing)
-            {
-                flashing = true;
-                StartCoroutine(StartFlashing());
-            }
-        }
-        else
-        {
-            speedX = Random.Range(-5f, 5f) * Time.deltaTime ;
-            speedY = Random.Range(-5f, 5f) * Time.deltaTime ;
-            speedZ = Random.Range(-5f, 5f) * Time.deltaTime ;
-            transform.position += new Vector3(speedX, speedY, speedZ);
-            transform.eulerAngles += new Vector3(rotateX, rotateY, rotateZ);
-
-            if (flashing)
-                flashing = false;
-        }
+        speedX = Random.Range(-5f, 5f) * Time.deltaTime;
+        speedY = Random.Range(-5f, 5f) * Time.deltaTime;
+        speedZ = Random.Range(-5f, 5f) * Time.deltaTime;
+        transform.position += new Vector3(speedX, speedY, speedZ);
+        transform.eulerAngles += new Vector3(rotateX, rotateY, rotateZ);
     }
 
-    private IEnumerator StartFlashing()
+    private IEnumerator Flash()
     {
-        while (flashing)
+        while (true)
         {
-            hostileMat.EnableKeyword("_EMISSION");
+            hostileMesh.GetPropertyBlock(materialBlock);
+            materialBlock.SetColor("_EmissionColor", Color.white * 2);
+            hostileMesh.SetPropertyBlock(materialBlock);
 
             yield return new WaitForSeconds(0.5f);
 
-            hostileMat.DisableKeyword("_EMISSION");
+            hostileMesh.GetPropertyBlock(materialBlock);
+            materialBlock.SetColor("_EmissionColor", Color.white / 2);
+            hostileMesh.SetPropertyBlock(materialBlock);
 
             yield return new WaitForSeconds(0.5f);
         }
