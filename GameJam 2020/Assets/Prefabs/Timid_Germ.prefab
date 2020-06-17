@@ -55,8 +55,10 @@ MonoBehaviour:
   rotateX: 0
   rotateY: 0
   rotateZ: 0
+  Player: {fileID: 0}
   dist: 10
   movementSpeed: 6
+  timidMat: {fileID: 2100000, guid: 0cd83f123556cd1409c9d52b3705f5b9, type: 2}
 --- !u!114 &6185619746538059617
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class timidMovement : MonoBehaviour
     public Transform Player;
     public float dist = 10f;
     [SerializeField] float movementSpeed = 6f;
+    [SerializeField] private Material timidMat;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,9 @@ public class timidMovement : MonoBehaviour
         {
             transform.LookAt(Player);
             transform.position -= transform.forward * movementSpeed * Time.deltaTime;
+
+            if (!timidMat.IsKeywordEnabled("_EMISSION"))
+                timidMat.EnableKeyword("_EMISSION");
         }
         else
         {
@@ -34,6 +38,9 @@ public class timidMovement : MonoBehaviour
             speedZ = Random.Range(-1f, 1f) * Time.deltaTime;
             transform.position += new Vector3(speedX, speedY, speedZ);
             transform.eulerAngles += new Vector3(rotateX, rotateY, rotateZ);
+
+            if (timidMat.IsKeywordEnabled("_EMISSION"))
+                timidMat.DisableKeyword("_EMISSION");
         }
     }
 }
