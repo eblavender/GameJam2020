@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum GermType { Static, Timid, Hostile }
 public class GameManager : MonoBehaviour
@@ -10,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     public PlayerMotor motor;
     public Slider virusSlider;
+    public GameObject victoryScreen, germDefeatScreen;
 
     [Header("Germ Settings")]
     public GameObject staticPrefab;
@@ -39,6 +41,11 @@ public class GameManager : MonoBehaviour
 
         virusSlider.maxValue = maxGerms;
         virusSlider.value = allGerms.Count;
+
+        victoryScreen.SetActive(false);
+        germDefeatScreen.SetActive(false);
+
+        Time.timeScale = 1f;
     }
 
     private void Update()
@@ -46,12 +53,26 @@ public class GameManager : MonoBehaviour
         if (timer > 0)
         {
             timer -= Time.deltaTime;
+            virusSlider.value = allGerms.Count;
+            if (allGerms.Count <= 0f)
+            {
+                Debug.Log("Fin");
+                victoryScreen.SetActive(true);
+
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
             return;
         }
 
+        //virusSlider.value = allGerms.Count;
         timer = multiplyFrequency;
         MultiplyAllGerms();
-    }
+
+        //Debug.Log(allGerms.Count);
+
+         
+    }   
 
     public void StartGame()
     {
@@ -79,8 +100,11 @@ public class GameManager : MonoBehaviour
 
         if (allGerms.Count >= maxGerms)
         {                                                                                            //if max germs > 100 then game over
-            //Time.timeScale = 0f;
-            //Game over
+            germDefeatScreen.SetActive(true);
+            Debug.Log("Game over");
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Time.timeScale = 0f;
             //manager.
         }
     }
@@ -89,5 +113,17 @@ public class GameManager : MonoBehaviour
     private void UpdateVirusSlider()
     {
         virusSlider.value = allGerms.Count;
+
+    }
+
+    public void RetryLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //Application.LoadLevel(Application.loadedLevel);
+    }
+
+    public void ReturnToMaiunMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }

@@ -17,6 +17,8 @@ public class PlayerCombat : MonoBehaviour
     public float shield = 100;
     public float rechargeSpeed = 1;
 
+    public GameObject playerDefeatScreen;
+
     public bool hasShield = true;
 
 
@@ -38,6 +40,8 @@ public class PlayerCombat : MonoBehaviour
     {
         originalShieldColor = shieldObject.GetComponent<MeshRenderer>().material.color;
         motor = GetComponent<PlayerMotor>();
+
+        playerDefeatScreen.SetActive(false);
 
         healthSlider.minValue = 0;
         healthSlider.maxValue = health;
@@ -139,8 +143,12 @@ public class PlayerCombat : MonoBehaviour
         if(health <= 0)
         {
             //Dead
-            //Trigger big o'l explosion
+            //Trigger big o'l explosion     
+            playerDefeatScreen.SetActive(true);
             Destroy(gameObject);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Time.timeScale = 0f;
         }
     }
 

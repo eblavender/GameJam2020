@@ -23,7 +23,7 @@ public class menuScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mouseSens.value = gameSettings.sensValue;
+        gameSettings.sensValue = mouseSens.value;
     }
 
     public void LoadLevel()
