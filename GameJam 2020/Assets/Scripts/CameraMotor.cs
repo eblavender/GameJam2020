@@ -6,8 +6,8 @@ public class CameraMotor : MonoBehaviour
 
     private Quaternion currentRotation;
     private float wantedRotationAngleSide, currentRotationAngleSide, wantedRotationAngleUp, currentRotationAngleUp;
-    private float distance = 5.0f;
-    private float height = 4.0f;
+    [SerializeField] private float distance = 5.0f;
+    [SerializeField] private float height = 4.0f;
     private float rotationDamping = 3.0f;
 
     void LateUpdate()

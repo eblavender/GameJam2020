@@ -1,7 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
+public enum MoveState { Idle, Forward, Backward, Left, Right}
 public class PlayerMotor : MonoBehaviour
 {
+    public Animator boostEffectAnim;
     private Rigidbody playerRigid;
 
     [Header("Settings")]
@@ -11,17 +14,20 @@ public class PlayerMotor : MonoBehaviour
     [Space]
 
     [Header("Parameters")]
-    public float moveSpeed = 18;
+    public float maxSpeed = 15;
     public float lookSpeed = 1000;
+    public float thrust = 10f;
 
     //Cache
-    private Vector3 mouseRotation, playerMovement;
+    private Vector3 mouseRotation;
     private float pitch, yaw;
-    private float mouseSensitivity = 0.3f;
+    private float boostAmount;
+    private GameSettings gameSettings;
 
     void Start()
     {
         playerRigid = GetComponent<Rigidbody>();
+        gameSettings = GameSettings.Instance;
     }
     void FixedUpdate()
     {
@@ -31,38 +37,52 @@ public class PlayerMotor : MonoBehaviour
         CalculateMovement();
         CalculateRotation();
     }
+    private void Update()
+    {
+        //CalculateRotation();
+    }
 
     private void CalculateRotation()
     {
-        pitch = -Input.GetAxis("Mouse Y");
-        yaw = Input.GetAxis("Mouse X");
+        if (gameSettings)
+        {
+            if (gameSettings.yAxisInvert == false)
+                pitch -= Input.GetAxis("Mouse Y");
+            else
+                pitch += Input.GetAxis("Mouse Y");
 
-        mouseRotation = new Vector3(pitch, yaw, 0) * mouseSensitivity * Time.deltaTime * lookSpeed;
+            if (gameSettings.xAxisInvert == false)
+                yaw += Input.GetAxis("Mouse X");
+            else
+                yaw -= Input.GetAxis("Mouse X");
+        }
+        else
+        {
+            pitch -= Input.GetAxis("Mouse Y");
+            yaw += Input.GetAxis("Mouse X");
+        }
 
-        playerRigid.MoveRotation(playerRigid.rotation * Quaternion.Euler(mouseRotation));
+        mouseRotation = new Vector3(pitch, yaw, 0) * Time.deltaTime * lookSpeed;
+
+        transform.eulerAngles = mouseRotation;
+
+        //playerRigid.MoveRotation(playerRigid.rotation * Quaternion.Euler(mouseRotation));
     }
     private void CalculateMovement()
     {
+        //Verticle
         if (Input.GetKey(KeyCode.W))
-        {
-            //Move the Rigidbody forwards constantly at speed
-            playerRigid.velocity = transform.forward * moveSpeed;
-        }
+            playerRigid.AddForce(transform.forward * thrust);
         else if (Input.GetKey(KeyCode.S))
-        {
-            //Move the Rigidbody backwards constantly at speed
-            playerRigid.velocity = -transform.forward * moveSpeed;
-        }
-        
+            playerRigid.AddForce(-transform.forward * thrust);
+
+        //Horizontal
         if (Input.GetKey(KeyCode.D))
-        {
-            //Rotate the ship about the Y axis in the positive direction
-            playerRigid.velocity = transform.right * moveSpeed;
-        }
+            playerRigid.AddForce(transform.right * thrust);
         else if (Input.GetKey(KeyCode.A))
-        {
-            //Rotate the ship about the Y axis in the negative direction
-            playerRigid.velocity = -transform.right * moveSpeed;
-        }
+            playerRigid.AddForce(-transform.right * thrust);
+
+        boostAmount = -1f + ((playerRigid.velocity.magnitude / 30f) * 2);
+        boostEffectAnim.SetFloat("Boost", boostAmount);
     }
 }
