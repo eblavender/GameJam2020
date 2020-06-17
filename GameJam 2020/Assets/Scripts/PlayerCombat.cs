@@ -31,6 +31,7 @@ public class PlayerCombat : MonoBehaviour
 
     private List<GameObject> availableBullets;
     private GameObject nextBullet;
+    [SerializeField] private ParticleSystem explosion;
 
     private Color originalShieldColor;
 
@@ -144,6 +145,7 @@ public class PlayerCombat : MonoBehaviour
         {
             //Dead
             //Trigger big o'l explosion     
+            explosion.Play();
             playerDefeatScreen.SetActive(true);
             Destroy(gameObject);
             Cursor.lockState = CursorLockMode.None;
