@@ -22,8 +22,9 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: EnvironmentVirus
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: _EMISSION _METALLICSPECGLOSSMAP
-  m_LightmapFlags: 2
+  m_ShaderKeywords: _ENVIRONMENTREFLECTIONS_OFF _METALLICSPECGLOSSMAP _NORMALMAP
+    _SPECULARHIGHLIGHTS_OFF
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
@@ -34,11 +35,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 7afafd730a529d64ab409307a2ec9078, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6bdf9b23259bc5240b7429e655e2d258, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 29b84018b69974544990c4f9f3bc984e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -46,7 +47,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 7afafd730a529d64ab409307a2ec9078, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6bdf9b23259bc5240b7429e655e2d258, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -64,11 +65,11 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _Blend: 0
-    - _BumpScale: 1
+    - _BumpScale: 0.3
     - _Cull: 2
     - _Cutoff: 0.5
     - _DstBlend: 0
-    - _EnvironmentReflections: 1
+    - _EnvironmentReflections: 0
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -76,9 +77,9 @@ Material:
     - _OcclusionStrength: 1
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.415
+    - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
+    - _SpecularHighlights: 0
     - _SrcBlend: 1
     - _Surface: 0
     - _WorkflowMode: 1
