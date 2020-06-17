@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
 
     public PlayerMotor motor;
     public Slider virusSlider;
-    public GameObject victoryScreen, germDefeatScreen;
+    public GameObject victoryScreen, germDefeatScreen, pauseScreen;
+    public bool pause = false, gameOver;
 
     [Header("Germ Settings")]
     public GameObject staticPrefab;
@@ -44,6 +45,10 @@ public class GameManager : MonoBehaviour
 
         victoryScreen.SetActive(false);
         germDefeatScreen.SetActive(false);
+        pauseScreen.SetActive(false);
+
+        pause = false;
+        gameOver = false;
 
         Time.timeScale = 1f;
     }
@@ -62,6 +67,25 @@ public class GameManager : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
             }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                pause = !pause;
+            }
+
+            if(pause == true)
+            {
+                pauseScreen.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                Time.timeScale = 0f;
+            }
+            /*else
+            {
+
+                pauseScreen.SetActive(false);
+                Time.timeScale = 1f;
+            }*/
             return;
         }
 
@@ -104,7 +128,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Game over");
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            Time.timeScale = 0f;
+            gameOver = true;
             //manager.
         }
     }
@@ -118,12 +142,24 @@ public class GameManager : MonoBehaviour
 
     public void RetryLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        StartCoroutine("RetryButtonDelay");
         //Application.LoadLevel(Application.loadedLevel);
     }
 
     public void ReturnToMaiunMenu()
     {
+        StartCoroutine("ReturnButtonDelay");
+    }
+
+    IEnumerator RetryButtonDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    IEnumerator ReturnButtonDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }

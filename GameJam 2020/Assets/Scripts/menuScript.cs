@@ -17,6 +17,11 @@ public class menuScript : MonoBehaviour
     void Start()
     {
         gameSettings = GameSettings.Instance;
+        gameSettings.xAxisInvert = false;
+        gameSettings.yAxisInvert = false;
+        gameSettings.auto = false;
+        Time.timeScale = 1f;
+
     }
 
 
