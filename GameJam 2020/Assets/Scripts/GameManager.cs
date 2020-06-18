@@ -66,8 +66,6 @@ public class GameManager : MonoBehaviour
         {
             if(gameOver == false || !victory == false)
             PauseGame();
-            
-
         }
         
 
