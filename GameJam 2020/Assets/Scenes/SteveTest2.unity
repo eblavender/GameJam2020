@@ -1045,15 +1045,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 729033116, guid: ceb1e5c3b3e028248a495e8c186379d0, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2570579068780636295, guid: ceb1e5c3b3e028248a495e8c186379d0,
+    - target: {fileID: 7656700660191041438, guid: ceb1e5c3b3e028248a495e8c186379d0,
         type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.999
-      objectReference: {fileID: 0}
+      propertyPath: playerDefeatScreen
+      value: 
+      objectReference: {fileID: 1200163524}
     - target: {fileID: 7656700660191041438, guid: ceb1e5c3b3e028248a495e8c186379d0,
         type: 3}
       propertyPath: healthSlider
@@ -1064,16 +1060,6 @@ PrefabInstance:
       propertyPath: shieldSlider
       value: 
       objectReference: {fileID: 1361268233}
-    - target: {fileID: 7656700660191041438, guid: ceb1e5c3b3e028248a495e8c186379d0,
-        type: 3}
-      propertyPath: playerDefeatScreen
-      value: 
-      objectReference: {fileID: 1200163524}
-    - target: {fileID: 8870944682823243921, guid: ceb1e5c3b3e028248a495e8c186379d0,
-        type: 3}
-      propertyPath: isFlying
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8870944682823243925, guid: ceb1e5c3b3e028248a495e8c186379d0,
         type: 3}
       propertyPath: m_LocalPosition.x
