@@ -2212,7 +2212,7 @@ MonoBehaviour:
   - {fileID: 1785339960}
   - {fileID: 482673659}
   germsDying: []
-  multiplyFrequency: 5
+  multiplyFrequency: 20
   maxGerms: 550
   staticChance: 40
   timidChance: 40
@@ -2243,7 +2243,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 86ea3d6da44416b4f93b69d82acb297a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

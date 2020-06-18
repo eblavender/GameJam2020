@@ -163,6 +163,8 @@ public class GameManager : MonoBehaviour
             gameOver = true;
             //manager.
         }
+
+        GetComponent<AudioSource>().Play();
     }
 
 
