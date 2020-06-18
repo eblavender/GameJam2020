@@ -232,9 +232,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243778596830155478, guid: bc155dfdccec1be4780029a8bd542de5,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 264e547ca52408241a82ec633177ae3b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a2f24cd8b0e6fa9449ad8aa488d87001, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.556
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -409,7 +409,7 @@ MonoBehaviour:
   health: 100
   shield: 100
   rechargeSpeed: 10
-  bulletFireSound: {fileID: 0}
+  bulletFireSound: {fileID: 729033116}
   randomFireSound:
   - {fileID: 8300000, guid: 264e547ca52408241a82ec633177ae3b, type: 3}
   - {fileID: 8300000, guid: c880022d6ef9f2f4584e365fb1ad25c7, type: 3}

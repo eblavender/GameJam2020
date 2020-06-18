@@ -158,7 +158,7 @@ public class GameManager : MonoBehaviour
 
     public void ReturnToMaiunMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene(0);
     }
 
     public void SetTimeInAction()
