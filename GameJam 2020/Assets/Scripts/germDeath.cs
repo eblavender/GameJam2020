@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class germDeath : MonoBehaviour
 {
-    public float germHealth = 30f;
+    [SerializeField] private ParticleSystem deathParticles;
+
+    private float germHealth = 10f;
 
     private void OnCollisionEnter(Collision other)
     {
@@ -15,10 +17,20 @@ public class germDeath : MonoBehaviour
             if (germHealth <= 0f)
             {
                 GameManager.Instance.RemoveGerm(gameObject);
-                Destroy(gameObject);
+                GetComponentInChildren<MeshRenderer>().enabled = false;
+                GetComponent<SphereCollider>().enabled = false;
+
+                deathParticles.Play();
+
+                Invoke("Kill", deathParticles.main.duration);
             }
 
         }
+    }
+
+    private void Kill()
+    {
+        Destroy(gameObject);
     }
 }
         

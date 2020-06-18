@@ -189,8 +189,8 @@ MonoBehaviour:
   - {fileID: 3566696613769613488}
   - {fileID: 1332294261}
   germsDying: []
-  multiplyFrequency: 10
-  maxGerms: 100
+  multiplyFrequency: 5
+  maxGerms: 550
   staticChance: 34
   timidChance: 33
   hostileChance: 33

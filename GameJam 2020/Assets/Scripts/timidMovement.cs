@@ -30,6 +30,8 @@ public class timidMovement : MonoBehaviour
         if (!Player)
             return;
 
+        transform.position -= transform.forward * movementSpeed * Time.deltaTime;
+
         if (Vector3.Distance(transform.position, Player.position) <= dist)
         {
             if (!flashing)
@@ -37,8 +39,6 @@ public class timidMovement : MonoBehaviour
         }
         else
         {
-            transform.position -= transform.forward * movementSpeed * Time.deltaTime;
-
             speedX = Random.Range(-1f, 1f) * Time.deltaTime;
             speedY = Random.Range(-1f, 1f) * Time.deltaTime;
             speedZ = Random.Range(-1f, 1f) * Time.deltaTime;
