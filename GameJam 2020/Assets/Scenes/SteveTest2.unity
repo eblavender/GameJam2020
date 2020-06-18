@@ -2806,15 +2806,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8600404214125230794, guid: 3c0ad7d4fcffd6c48980c99a7085cbff,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.825
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600404214125230794, guid: 3c0ad7d4fcffd6c48980c99a7085cbff,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.825
+      objectReference: {fileID: 0}
     - target: {fileID: 8600404214125230795, guid: 3c0ad7d4fcffd6c48980c99a7085cbff,
         type: 3}
       propertyPath: m_Name
       value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 8600404214125230795, guid: 3c0ad7d4fcffd6c48980c99a7085cbff,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c0ad7d4fcffd6c48980c99a7085cbff, type: 3}
