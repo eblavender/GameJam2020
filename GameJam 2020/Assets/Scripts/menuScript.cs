@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class menuScript : MonoBehaviour
 {
     public Button playButton, optionsButton, quitButton;
-    public GameObject optionsMenu, playMenu;
+    public GameObject optionsMenu, playMenu, creditsMenu;
     private GameSettings gameSettings;
     public Slider mouseSens;
 
@@ -71,6 +71,11 @@ public class menuScript : MonoBehaviour
         StartCoroutine("BackButtonDelay");
     }
 
+    public void CreditsPlayed()
+    {
+        StartCoroutine("CreditsButtonDelay");
+    }
+
     IEnumerator OptionsButtonDelay()
     {
         yield return new WaitForSeconds(0.5f);
@@ -83,8 +88,17 @@ public class menuScript : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         optionsMenu.SetActive(false);
+        creditsMenu.SetActive(false);
         playMenu.SetActive(true);
 
+    }
+
+    IEnumerator CreditsButtonDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
+        creditsMenu.SetActive(true);
+        playMenu.SetActive(false);
+        
     }
 
 
