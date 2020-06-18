@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7155407096125343004}
   - component: {fileID: 8434947460849117503}
   - component: {fileID: 6185619746538059617}
-  - component: {fileID: 6120043151777114560}
   - component: {fileID: 6908583375082779291}
+  - component: {fileID: 6120043151777114560}
   - component: {fileID: 6206178556821669673}
   - component: {fileID: 6436367583710740478}
   m_Layer: 8
@@ -59,7 +59,7 @@ MonoBehaviour:
   rotateZ: 0
   Player: {fileID: 0}
   dist: 400
-  movementSpeed: 30
+  movementSpeed: 25
   timidMat: {fileID: 650497656434649256}
 --- !u!114 &6185619746538059617
 MonoBehaviour:
@@ -75,19 +75,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   germType: 1
   hasMultiplied: 0
---- !u!135 &6120043151777114560
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5754295885939649704}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.35
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6908583375082779291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,6 +88,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 4416667859367046862}
+--- !u!135 &6120043151777114560
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5754295885939649704}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6206178556821669673
 Rigidbody:
   m_ObjectHideFlags: 0
