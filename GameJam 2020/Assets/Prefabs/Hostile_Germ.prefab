@@ -135,7 +135,7 @@ MonoBehaviour:
   rotateY: 0
   rotateZ: 0
   Player: {fileID: 0}
-  dist: 6
+  dist: 300
   movementSpeed: 10
   hostileMesh: {fileID: 2433654096564034757}
 --- !u!114 &6577729742407183174
