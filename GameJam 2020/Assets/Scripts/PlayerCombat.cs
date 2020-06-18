@@ -41,7 +41,7 @@ public class PlayerCombat : MonoBehaviour
 
     private Color originalShieldColor;
 
-    private float timer = 3f;
+    private float timer = 10f;
 
     private void Start()
     {
@@ -73,10 +73,13 @@ public class PlayerCombat : MonoBehaviour
             FireBullet();
         }
 
-        if (timer > 0)
+        if (timer > 0 && shield != MAX_SHIELD)
             timer -= Time.deltaTime;
-        else if (shield != MAX_SHIELD)
+        else if (shield == MAX_SHIELD)
+            timer = RECHARGE_COOLDOWN;
+        else if (shield < MAX_SHIELD)
         {
+
             shield += Time.deltaTime * rechargeSpeed;
             UpdateUI();
         }
