@@ -10,6 +10,7 @@ public class PlayerMotor : MonoBehaviour
     [Header("Settings")]
     public bool joystick = true;
     public bool isFlying = false;
+    public bool autoPilot;
 
     public AudioSource thrustPlayer;
     public AudioClip thrustSound;
@@ -32,8 +33,11 @@ public class PlayerMotor : MonoBehaviour
         playerRigid = GetComponent<Rigidbody>();
         gameSettings = GameSettings.Instance;
 
-        if(gameSettings)
+        if (gameSettings)
+        {
             lookSpeed *= gameSettings.sensValue;
+            autoPilot = gameSettings.auto;
+        }
     }
     void FixedUpdate()
     {
@@ -73,48 +77,19 @@ public class PlayerMotor : MonoBehaviour
     private void CalculateMovement()
     {
         //Verticle
-        if (Input.GetKey(KeyCode.W))
-        {
-            ThrusterSoundEffectPlay();
+        if (autoPilot)
             playerRigid.AddForce(transform.forward * thrust);
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            ThrusterSoundEffectPlay();
+        else if (Input.GetKey(KeyCode.W))
+            playerRigid.AddForce(transform.forward * thrust);
+        if (Input.GetKey(KeyCode.S))
             playerRigid.AddForce(-transform.forward * thrust);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            ThrusterSoundEffectPlay();
+        if (Input.GetKey(KeyCode.D))
             playerRigid.AddForce(transform.right * thrust);
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            ThrusterSoundEffectPlay();
+        if (Input.GetKey(KeyCode.A))
             playerRigid.AddForce(-transform.right * thrust);
-        }
-        else
-        {
-            ThrusterSoundEffectStop();
-        }
         
 
         boostAmount = -1f + ((playerRigid.velocity.magnitude / 30f) * 2);
         boostEffectAnim.SetFloat("Boost", boostAmount);
-    }
-
-    public void ThrusterSoundEffectPlay()
-    {
-        if (!thrustPlayer.isPlaying)
-        {
-            thrustPlayer.clip = thrustSound;
-            thrustPlayer.Play();
-        }
-    }
-
-    public void ThrusterSoundEffectStop()
-    {
-        if(thrustPlayer.isPlaying)
-        thrustPlayer.Stop();
     }
 }

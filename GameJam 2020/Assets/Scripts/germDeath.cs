@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class germDeath : MonoBehaviour
 {
     [SerializeField] private ParticleSystem deathParticles;
+    private AudioSource source;
 
     private float germHealth = 10f;
+
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
 
     private void OnCollisionEnter(Collision other)
     {
@@ -27,6 +34,7 @@ public class germDeath : MonoBehaviour
         GetComponentInChildren<MeshRenderer>().enabled = false;
         GetComponent<SphereCollider>().enabled = false;
 
+        source.Play();
         deathParticles.Play();
 
         Invoke("Kill", deathParticles.main.duration);

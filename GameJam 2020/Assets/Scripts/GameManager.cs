@@ -28,9 +28,13 @@ public class GameManager : MonoBehaviour
     public int staticChance, timidChance, hostileChance;
     private int deathCount;
 
+    private germMultiply tempMultiply;
+
     //Cache
     private List<germMultiply> tempGerms = new List<germMultiply>();
     private float timer = 0;
+
+    #region Unity Functions
 
     private void Awake()
     {
@@ -64,7 +68,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(gameOver == false || !victory == false)
+            if(!gameOver && !victory)
             PauseGame();
         }
         
@@ -94,7 +98,9 @@ public class GameManager : MonoBehaviour
         //Debug.Log(allGerms.Count);
 
          
-    }   
+    }
+
+    #endregion
 
     public void StartGame()
     {
@@ -135,7 +141,13 @@ public class GameManager : MonoBehaviour
     private void MultiplyAllGerms()
     {
         foreach (germMultiply germ in allGerms)
-            tempGerms.Add(germ.MultiplyGerm().GetComponent<germMultiply>());
+        {
+            if (germ.hasMultiplied)
+                continue;
+
+            tempMultiply = germ.MultiplyGerm().GetComponent<germMultiply>();
+            tempGerms.Add(tempMultiply);
+        }
 
         foreach (germMultiply germ in tempGerms)
             allGerms.Add(germ);

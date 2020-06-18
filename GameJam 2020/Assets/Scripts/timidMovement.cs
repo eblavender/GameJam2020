@@ -39,10 +39,6 @@ public class timidMovement : MonoBehaviour
         }
         else
         {
-            speedX = Random.Range(-1f, 1f) * Time.deltaTime;
-            speedY = Random.Range(-1f, 1f) * Time.deltaTime;
-            speedZ = Random.Range(-1f, 1f) * Time.deltaTime;
-            transform.position += new Vector3(speedX, speedY, speedZ);
             transform.eulerAngles += new Vector3(rotateX, rotateY, rotateZ);
 
             if (flashing)

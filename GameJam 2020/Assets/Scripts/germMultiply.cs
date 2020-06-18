@@ -10,6 +10,7 @@ public class germMultiply : MonoBehaviour
 
     public GermType germType;
     private int germChance;
+    public bool hasMultiplied = false;
 
     void Start()
     {
@@ -29,6 +30,7 @@ public class germMultiply : MonoBehaviour
         else
             germ = Instantiate(manager.staticPrefab, transform.position + offset, Random.rotation);
 
+        hasMultiplied = true;
         return germ;
     }
 }

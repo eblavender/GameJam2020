@@ -1060,6 +1060,11 @@ PrefabInstance:
       propertyPath: shieldSlider
       value: 
       objectReference: {fileID: 1361268233}
+    - target: {fileID: 8870944682823243921, guid: ceb1e5c3b3e028248a495e8c186379d0,
+        type: 3}
+      propertyPath: isFlying
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8870944682823243925, guid: ceb1e5c3b3e028248a495e8c186379d0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2124,6 +2129,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2d4ff2705bf6c46a6ab9f77d57c44c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1438514539 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7779110669477043197, guid: e58e1f0f77607d744a956f80d8f169bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 2887258}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1506554354 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8870944682823243921, guid: ceb1e5c3b3e028248a495e8c186379d0,
@@ -2146,6 +2163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1546740666}
   - component: {fileID: 1546740665}
+  - component: {fileID: 1546740667}
   m_Layer: 0
   m_Name: Gameplay
   m_TagString: Untagged
@@ -2166,6 +2184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motor: {fileID: 1506554354}
+  virusCountText: {fileID: 1438514539}
   virusSlider: {fileID: 219898395}
   victoryScreen: {fileID: 1200163526}
   germDefeatScreen: {fileID: 1200163525}
@@ -2193,7 +2212,7 @@ MonoBehaviour:
   - {fileID: 1785339960}
   - {fileID: 482673659}
   germsDying: []
-  multiplyFrequency: 20
+  multiplyFrequency: 5
   maxGerms: 550
   staticChance: 40
   timidChance: 40
@@ -2212,6 +2231,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1546740667
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546740664}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 86ea3d6da44416b4f93b69d82acb297a, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &1572525274 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8870944682823243925, guid: ceb1e5c3b3e028248a495e8c186379d0,
@@ -2571,11 +2686,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BGM
-      objectReference: {fileID: 0}
-    - target: {fileID: 3816282862510160603, guid: 46ef31e3dec56f14cb41850098a27b17,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.018
       objectReference: {fileID: 0}
     - target: {fileID: 3816282862510160604, guid: 46ef31e3dec56f14cb41850098a27b17,
         type: 3}
