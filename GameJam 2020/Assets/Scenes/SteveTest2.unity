@@ -2204,9 +2204,9 @@ MonoBehaviour:
   germsDying: []
   multiplyFrequency: 20
   maxGerms: 550
-  staticChance: 45
-  timidChance: 35
-  hostileChance: 15
+  staticChance: 40
+  timidChance: 40
+  hostileChance: 20
 --- !u!4 &1546740666
 Transform:
   m_ObjectHideFlags: 0
