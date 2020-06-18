@@ -88,6 +88,9 @@ public class PlayerCombat : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (isDead)
+            return;
+
         if (collision.transform.CompareTag("Germ"))
         {
             //Take damage from virus
