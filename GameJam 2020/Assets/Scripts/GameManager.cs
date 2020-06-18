@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -142,7 +142,7 @@ public class GameManager : MonoBehaviour
     {
         foreach (germMultiply germ in allGerms)
         {
-            if (germ.hasMultiplied)
+            if (germ.hasMultiplied && allGerms.Count > 25)
                 continue;
 
             tempMultiply = germ.MultiplyGerm().GetComponent<germMultiply>();
