@@ -311,7 +311,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8691466894530651383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0595, z: 1.249}
+  m_LocalPosition: {x: 0, y: 0.0595, z: 1.999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8870944682823243925}
@@ -485,7 +485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boostEffectAnim: {fileID: 1011494043551193980}
   joystick: 0
-  isFlying: 0
+  isFlying: 1
   thrustPlayer: {fileID: 5010488419665490005}
   thrustSound: {fileID: 8300000, guid: ecd83d769de62fb4da85c3bc8670594c, type: 3}
   maxSpeed: 30
