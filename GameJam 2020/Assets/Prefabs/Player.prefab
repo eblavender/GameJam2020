@@ -486,7 +486,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boostEffectAnim: {fileID: 1011494043551193980}
   joystick: 0
-  isFlying: 1
+  isFlying: 0
+  autoPilot: 0
   thrustPlayer: {fileID: 5010488419665490005}
   thrustSound: {fileID: 8300000, guid: ecd83d769de62fb4da85c3bc8670594c, type: 3}
   maxSpeed: 30
