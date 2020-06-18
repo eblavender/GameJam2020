@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     [HideInInspector] public PlayerCombat combat;
 
-    private const int MAX_DISTANCE = 100;
+    private const int MAX_DISTANCE = 500;
 
     private bool isActive = false;
     [SerializeField] private float bulletSpeed;

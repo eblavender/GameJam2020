@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fed543fbe9d2f442812040d95e73f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  germHealth: 30
+  germHealth: 10
 --- !u!54 &8697428312105861581
 Rigidbody:
   m_ObjectHideFlags: 0
