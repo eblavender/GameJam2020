@@ -21,7 +21,6 @@ public class menuScript : MonoBehaviour
         gameSettings.yAxisInvert = false;
         gameSettings.auto = false;
         Time.timeScale = 1f;
-
     }
 
 
