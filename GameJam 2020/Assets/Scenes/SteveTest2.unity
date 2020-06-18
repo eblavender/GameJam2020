@@ -392,11 +392,6 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1572525274}
-    - target: {fileID: 8434947460849117503, guid: d36d5bc725c08b440adaa4457f4f8ad7,
-        type: 3}
-      propertyPath: dist
-      value: 200
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d36d5bc725c08b440adaa4457f4f8ad7, type: 3}
 --- !u!1001 &185991874
@@ -1054,6 +1049,11 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2570579068780636295, guid: ceb1e5c3b3e028248a495e8c186379d0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.999
+      objectReference: {fileID: 0}
     - target: {fileID: 7656700660191041438, guid: ceb1e5c3b3e028248a495e8c186379d0,
         type: 3}
       propertyPath: healthSlider
@@ -1210,35 +1210,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2833862646148359829, guid: bd6e070a3fe631d45a4b4ed39ce94c89,
-        type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3402577772921599451, guid: bd6e070a3fe631d45a4b4ed39ce94c89,
         type: 3}
       propertyPath: m_Name
       value: Environment
-      objectReference: {fileID: 0}
-    - target: {fileID: 3499985952714691103, guid: bd6e070a3fe631d45a4b4ed39ce94c89,
-        type: 3}
-      propertyPath: m_Range
-      value: 367.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 3970147179732147706, guid: bd6e070a3fe631d45a4b4ed39ce94c89,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3970147179732147706, guid: bd6e070a3fe631d45a4b4ed39ce94c89,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3970147179732147706, guid: bd6e070a3fe631d45a4b4ed39ce94c89,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6e070a3fe631d45a4b4ed39ce94c89, type: 3}
@@ -2232,10 +2207,10 @@ MonoBehaviour:
   - {fileID: 1785339960}
   - {fileID: 482673659}
   germsDying: []
-  multiplyFrequency: 30
+  multiplyFrequency: 20
   maxGerms: 550
-  staticChance: 60
-  timidChance: 20
+  staticChance: 40
+  timidChance: 40
   hostileChance: 20
 --- !u!4 &1546740666
 Transform:
@@ -2269,11 +2244,6 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1572525274}
-    - target: {fileID: 3906186229795957613, guid: d4a522741805b7441b372d1d3dfb6de5,
-        type: 3}
-      propertyPath: dist
-      value: 300
-      objectReference: {fileID: 0}
     - target: {fileID: 4814075863117348360, guid: d4a522741805b7441b372d1d3dfb6de5,
         type: 3}
       propertyPath: m_LocalPosition.x
