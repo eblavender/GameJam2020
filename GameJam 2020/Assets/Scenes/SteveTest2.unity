@@ -1069,6 +1069,11 @@ PrefabInstance:
       propertyPath: playerDefeatScreen
       value: 
       objectReference: {fileID: 1200163524}
+    - target: {fileID: 8870944682823243921, guid: ceb1e5c3b3e028248a495e8c186379d0,
+        type: 3}
+      propertyPath: isFlying
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8870944682823243925, guid: ceb1e5c3b3e028248a495e8c186379d0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1214,6 +1219,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Environment
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499985952714691103, guid: bd6e070a3fe631d45a4b4ed39ce94c89,
+        type: 3}
+      propertyPath: m_Range
+      value: 367.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3970147179732147706, guid: bd6e070a3fe631d45a4b4ed39ce94c89,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3970147179732147706, guid: bd6e070a3fe631d45a4b4ed39ce94c89,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3970147179732147706, guid: bd6e070a3fe631d45a4b4ed39ce94c89,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6e070a3fe631d45a4b4ed39ce94c89, type: 3}

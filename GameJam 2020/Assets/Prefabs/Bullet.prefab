@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   combat: {fileID: 0}
-  bulletSpeed: 200
+  bulletSpeed: 300
 --- !u!135 &4750513070659722887
 SphereCollider:
   m_ObjectHideFlags: 0
