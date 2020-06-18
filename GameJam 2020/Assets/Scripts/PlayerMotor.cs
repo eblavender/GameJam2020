@@ -11,6 +11,9 @@ public class PlayerMotor : MonoBehaviour
     public bool joystick = true;
     public bool isFlying = false;
 
+    public AudioSource thrustPlayer;
+    public AudioClip thrustSound;
+
     [Space]
 
     [Header("Parameters")]
@@ -71,9 +74,13 @@ public class PlayerMotor : MonoBehaviour
     {
         //Verticle
         if (Input.GetKey(KeyCode.W))
+        {
+            ThrusterSoundEffectPlay();
             playerRigid.AddForce(transform.forward * thrust);
+        }
         else if (Input.GetKey(KeyCode.S))
             playerRigid.AddForce(-transform.forward * thrust);
+
 
         //Horizontal
         if (Input.GetKey(KeyCode.D))
@@ -83,5 +90,14 @@ public class PlayerMotor : MonoBehaviour
 
         boostAmount = -1f + ((playerRigid.velocity.magnitude / 30f) * 2);
         boostEffectAnim.SetFloat("Boost", boostAmount);
+    }
+
+    public void ThrusterSoundEffectPlay()
+    {
+        if (!thrustPlayer.isPlaying)
+        {
+            thrustPlayer.clip = thrustSound;
+            thrustPlayer.Play();
+        }
     }
 }

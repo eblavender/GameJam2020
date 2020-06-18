@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 using DG.Tweening;
 
 public class PlayerCombat : MonoBehaviour
@@ -17,8 +18,9 @@ public class PlayerCombat : MonoBehaviour
     public float shield = 100;
     public float rechargeSpeed = 1;
 
-    public AudioSource bulletFireSound;
+    public AudioSource audioPlayer;
     public AudioClip[] randomFireSound;
+    public AudioClip explosionSound;
 
     public GameObject playerDefeatScreen;
 
@@ -110,13 +112,16 @@ public class PlayerCombat : MonoBehaviour
         nextBullet.transform.position = bulletSpawn.position;
         nextBullet.transform.rotation = transform.rotation;
         nextBullet.SetActive(true);
+        RandomBulletSound();
 
     }
 
     public void RandomBulletSound()
     {
 
-    
+        audioPlayer.clip = randomFireSound[Random.Range(0,randomFireSound.Length)];
+        audioPlayer.Play();
+
     }
 
 
@@ -160,6 +165,8 @@ public class PlayerCombat : MonoBehaviour
             //Trigger big o'l explosion
             isDead = true;
             explosion.Play();
+            audioPlayer.clip = explosionSound;
+            audioPlayer.Play();
             playerDefeatScreen.SetActive(true);
             Destroy(GetComponentInChildren<MeshRenderer>());
             Cursor.lockState = CursorLockMode.None;
