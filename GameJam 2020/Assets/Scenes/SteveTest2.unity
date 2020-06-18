@@ -1816,6 +1816,7 @@ MonoBehaviour:
   pauseScreen: {fileID: 0}
   pause: 0
   gameOver: 0
+  victory: 0
   staticPrefab: {fileID: 3566696612947075068, guid: 71a91ab9341745a45b039c5c9033c74c,
     type: 3}
   timidPrefab: {fileID: 5754295885939649704, guid: d36d5bc725c08b440adaa4457f4f8ad7,
