@@ -389,7 +389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boostEffectAnim: {fileID: 1011494043551193980}
   joystick: 0
-  isFlying: 1
+  isFlying: 0
   maxSpeed: 30
   lookSpeed: 400
   thrust: 30
@@ -409,6 +409,13 @@ MonoBehaviour:
   health: 100
   shield: 100
   rechargeSpeed: 10
+  bulletFireSound: {fileID: 0}
+  randomFireSound:
+  - {fileID: 8300000, guid: 264e547ca52408241a82ec633177ae3b, type: 3}
+  - {fileID: 8300000, guid: c880022d6ef9f2f4584e365fb1ad25c7, type: 3}
+  - {fileID: 8300000, guid: 1fcd452ad67771b46bc77a7ec24cea3d, type: 3}
+  - {fileID: 8300000, guid: b44d781717a1a4841b9eadacd42b048f, type: 3}
+  - {fileID: 8300000, guid: bba9cc27ae2dc62489bbb2ad147cd69b, type: 3}
   playerDefeatScreen: {fileID: 0}
   hasShield: 1
   isDead: 0

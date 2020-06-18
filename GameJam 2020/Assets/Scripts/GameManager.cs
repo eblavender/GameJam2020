@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public PlayerMotor motor;
     public Slider virusSlider;
     public GameObject victoryScreen, germDefeatScreen, pauseScreen;
-    public bool pause = false, gameOver;
+    [SerializeField] private bool pause = false, gameOver, victory;
 
     [Header("Germ Settings")]
     public GameObject staticPrefab;
@@ -52,12 +52,14 @@ public class GameManager : MonoBehaviour
 
         pause = false;
         gameOver = false;
+        victory = false;
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            if(!gameOver || !victory)
             PauseGame();
         }
 
@@ -72,6 +74,8 @@ public class GameManager : MonoBehaviour
 
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+
+                victory = true;
             }
 
             return;
@@ -155,5 +159,10 @@ public class GameManager : MonoBehaviour
     public void ReturnToMaiunMenu()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    public void SetTimeInAction()
+    {
+        Time.timeScale = 1f;
     }
 }

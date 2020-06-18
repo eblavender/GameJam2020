@@ -17,6 +17,9 @@ public class PlayerCombat : MonoBehaviour
     public float shield = 100;
     public float rechargeSpeed = 1;
 
+    public AudioSource bulletFireSound;
+    public AudioClip[] randomFireSound;
+
     public GameObject playerDefeatScreen;
 
     public bool hasShield = true;
@@ -107,7 +110,16 @@ public class PlayerCombat : MonoBehaviour
         nextBullet.transform.position = bulletSpawn.position;
         nextBullet.transform.rotation = transform.rotation;
         nextBullet.SetActive(true);
+
     }
+
+    public void RandomBulletSound()
+    {
+
+    
+    }
+
+
     private void TakeDamage(int amount)
     {
         float difference;
