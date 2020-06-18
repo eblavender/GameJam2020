@@ -94,8 +94,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookAt: {fileID: 0}
-  distance: 7.5
-  height: 3
+  distance: 2
+  height: 4
 --- !u!1 &6062975601672155919
 GameObject:
   m_ObjectHideFlags: 0

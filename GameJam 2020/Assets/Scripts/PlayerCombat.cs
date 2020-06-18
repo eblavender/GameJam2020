@@ -37,7 +37,7 @@ public class PlayerCombat : MonoBehaviour
 
     private List<GameObject> availableBullets;
     private GameObject nextBullet;
-    [SerializeField] private ParticleSystem explosion;
+    [SerializeField] private ParticleSystem explosion, shooting;
 
     private Color originalShieldColor;
 
@@ -115,8 +115,8 @@ public class PlayerCombat : MonoBehaviour
         nextBullet.transform.position = bulletSpawn.position;
         nextBullet.transform.rotation = transform.rotation;
         nextBullet.SetActive(true);
+        shooting.Play();
         RandomBulletSound();
-
     }
 
     public void RandomBulletSound()

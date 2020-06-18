@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public enum GermType { Static, Timid, Hostile }
 public class GameManager : MonoBehaviour
@@ -10,6 +11,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public PlayerMotor motor;
+    public TextMeshProUGUI virusCountText;
     public Slider virusSlider;
     public GameObject victoryScreen, germDefeatScreen, pauseScreen;
     public bool pause = false, gameOver, victory;
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int maxGerms = 200;
     [Range(0, 100)]
     public int staticChance, timidChance, hostileChance;
+    private int deathCount;
 
     //Cache
     private List<germMultiply> tempGerms = new List<germMultiply>();
@@ -124,6 +127,9 @@ public class GameManager : MonoBehaviour
 
     public void RemoveGerm(GameObject germ)
     {
+        deathCount++;
+        virusCountText.text = deathCount.ToString("n0");
+
         allGerms.Remove(germ.GetComponent<germMultiply>());
         UpdateVirusSlider();
     }

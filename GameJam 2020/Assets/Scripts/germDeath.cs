@@ -15,17 +15,21 @@ public class germDeath : MonoBehaviour
             germHealth -= 10f;
 
             if (germHealth <= 0f)
-            {
-                GameManager.Instance.RemoveGerm(gameObject);
-                GetComponentInChildren<MeshRenderer>().enabled = false;
-                GetComponent<SphereCollider>().enabled = false;
-
-                deathParticles.Play();
-
-                Invoke("Kill", deathParticles.main.duration);
-            }
-
+                DestroyGerm();
         }
+        else if (other.transform.CompareTag("Player"))
+            DestroyGerm();
+    }
+
+    private void DestroyGerm()
+    {
+        GameManager.Instance.RemoveGerm(gameObject);
+        GetComponentInChildren<MeshRenderer>().enabled = false;
+        GetComponent<SphereCollider>().enabled = false;
+
+        deathParticles.Play();
+
+        Invoke("Kill", deathParticles.main.duration);
     }
 
     private void Kill()
