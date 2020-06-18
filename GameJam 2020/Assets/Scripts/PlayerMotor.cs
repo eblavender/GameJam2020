@@ -79,14 +79,25 @@ public class PlayerMotor : MonoBehaviour
             playerRigid.AddForce(transform.forward * thrust);
         }
         else if (Input.GetKey(KeyCode.S))
+        {
+            ThrusterSoundEffectPlay();
             playerRigid.AddForce(-transform.forward * thrust);
-
-
-        //Horizontal
-        if (Input.GetKey(KeyCode.D))
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            ThrusterSoundEffectPlay();
             playerRigid.AddForce(transform.right * thrust);
+        }
         else if (Input.GetKey(KeyCode.A))
+        {
+            ThrusterSoundEffectPlay();
             playerRigid.AddForce(-transform.right * thrust);
+        }
+        else
+        {
+            ThrusterSoundEffectStop();
+        }
+        
 
         boostAmount = -1f + ((playerRigid.velocity.magnitude / 30f) * 2);
         boostEffectAnim.SetFloat("Boost", boostAmount);
@@ -99,5 +110,11 @@ public class PlayerMotor : MonoBehaviour
             thrustPlayer.clip = thrustSound;
             thrustPlayer.Play();
         }
+    }
+
+    public void ThrusterSoundEffectStop()
+    {
+        if(thrustPlayer.isPlaying)
+        thrustPlayer.Stop();
     }
 }

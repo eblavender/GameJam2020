@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public PlayerMotor motor;
     public Slider virusSlider;
     public GameObject victoryScreen, germDefeatScreen, pauseScreen;
-    [SerializeField] private bool pause = false, gameOver, victory;
+    public bool pause = false, gameOver, victory;
 
     [Header("Germ Settings")]
     public GameObject staticPrefab;
@@ -53,15 +53,20 @@ public class GameManager : MonoBehaviour
         pause = false;
         gameOver = false;
         victory = false;
+
+        Time.timeScale = 1f;
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(!gameOver || !victory)
+            if(gameOver == false || !victory == false)
             PauseGame();
+            
+
         }
+        
 
         if (timer > 0)
         {

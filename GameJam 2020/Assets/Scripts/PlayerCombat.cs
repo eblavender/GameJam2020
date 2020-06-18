@@ -167,6 +167,7 @@ public class PlayerCombat : MonoBehaviour
             explosion.Play();
             audioPlayer.clip = explosionSound;
             audioPlayer.Play();
+            GameManager.Instance.gameOver = true;
             playerDefeatScreen.SetActive(true);
             Destroy(GetComponentInChildren<MeshRenderer>());
             Cursor.lockState = CursorLockMode.None;
